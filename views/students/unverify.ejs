@@ -1,0 +1,88 @@
+  
+<section class="my-5">
+    <div class="row">
+        <div class="col-lg-9 m-auto">
+            <a href="/students" class="btn btn-primary my-2">Back</a>
+                <div class="card shadow-lg">
+                    <div class="card-header">
+                        <h1 class="text-center">Unverified students</h1>
+                    </div>
+            <div class="card-body">
+                
+                <table class="table table-striped table-hover soro-data-table" >
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phono</th>
+                            <th>verify</th>
+                            <th>Photo</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% student.forEach((student,index) => { %>
+                        <tr>
+                            <td ><%= index+1 %> </td>
+                            <td><%= student.name%></td>
+                            <td><%= student.email %></td>
+                            <td><%= student.phone %></td>
+                            <td><a href="/students/smsVerify/<%= student.id%>"   class="btn btn-warning">verify by phone</a></td>
+                            <td>
+                                <% if (student.photo=='avater.webp') { %>
+                                <img src="/images/<%= student.photo%> " alt="" class="p-0 upload-img"">
+                                <% } else { %>
+                                 <img src="/images/students/<%= student.photo%> " alt="" class="p-0 upload-img"">
+                            <% }  %>
+                        </td>
+                            <td style="width:112px;">
+                                <a href="/students/<%= student.id %>" class="btn btn-info btn-sm"><i class="fa-solid fa-eye"></i></a>
+                                <a href="/students/edit/<%= student.id %>" class="btn btn-sm btn-warning"><i class="fa-solid fa-pen-to-square"></i></i></a>
+                                <a href="/students/delete/<%= student.id %>" class="btn btn-sm btn-danger deleteBtn"><i class="fa-solid fa-trash"></i></i></a>
+                            </td>
+                        </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+<!-- </section>
+
+<script>
+
+    const smsSubmit=document.getElementById('smsSubmit')
+    
+    if(smsSubmit){
+        smsSubmit.onclick=()=>{
+          const inputValue=document.getElementById('inputValue').value
+          const tokenValue=document.getElementById('smsToken').getAttribute('value')
+          const wrong=document.getElementById('wrong')
+          if(inputValue==tokenValue){
+            window.location.url=`/students/smsVerify/${inputValue}`
+          }else{
+            wrong.innerHTML='wrong value'
+          }
+    }
+    }
+    
+
+</script> -->
+
+
+
+
+    
+
+ 
+

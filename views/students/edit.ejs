@@ -1,0 +1,74 @@
+<section class="my-5">
+  <div class="row">
+    <div class="col-md-5 m-auto">
+      <a href="/students" class="btn btn-primary my-2">back</a>
+      <div class="card shadow-lg">
+        <div class="card-header">
+          <h2>Update Data</h2>
+        </div>
+        <div class="card-body">
+          <form action="/students/update/<%= singleStudent.id %>"  method="post" enctype="multipart/form-data">
+            <div class="my-3">
+              <label for="name">Name</label>
+              <input type="text" name="name" id="name" class="form-control" value="<%= singleStudent.name %>" />
+            </div>
+            <div class="my-3">
+              <label for="email">Email</label>
+              <input type="text" name="email" id="email" class="form-control" value="<%= singleStudent.email %>"/>
+            </div>
+            <div class="my-3">
+              <label for="phone">Phone</label>
+              <input type="text" name="phone" id="phone" class="form-control" value="<%= singleStudent.phone %>" />
+            </div>
+            <div class="my-3">
+              <label for="location">Location</label>
+              <select
+                name="location"
+                id="location"
+                class="form-control bg-secondary text-white text-center"
+              >
+                <option  value="">-select-</option>
+                <option value="dhaka" <% if (singleStudent.location =='dhaka') { %>
+                 selected
+                <% } %>>Dhaka</option>
+                <option value="rajshahi" <% if (singleStudent.location =='rajshahi') { %>
+                 selected
+                <% } %>>Rajshahi</option>
+                <option value="rangpur" <% if (singleStudent.location =='rangpur') { %>
+                 selected
+                <% } %>>Rangpur</option>
+                <option value="sylhet" <% if (singleStudent.location =='sylhet') { %>
+                 selected
+                <% } %>>Sylhet</option>
+                <option value="khulna" <% if (singleStudent.location =='khulna') { %>
+                 selected
+                <% } %>>Khulna</option>
+              </select>
+            </div>
+            
+            <div class="my-3">
+              <label>Photo</label> <br />
+              <input type="file" name="photo" class="d-none upload-img" id="photo"  />
+              <label for="photo" class="d-block pe-auto" style="cursor:pointer;"
+                >
+                <% if (singleStudent.photo=='avater.webp') { %>
+                                <img src="/images/<%= singleStudent.photo %> " alt="" class="w-100 upload-img" id="preload-img" >
+                                <% } else { %>
+                                 <img src="/images/students/<%= singleStudent.photo %> " alt="" class="w-100 upload-img" id="preload-img" >
+                            <% }  %>
+                <br>
+                <img src=""alt=""/ class="image-icon d-block"> 
+                </label>
+            </div>
+            <input
+              type="submit"
+              value="update"
+              class="btn btn-primary w-100"
+              class="form-control"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

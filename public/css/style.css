@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2&family=Poppins&display=swap");
+tbody td img {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+* {
+  font-family: poppins;
+  font-size: 15px;
+}
+
+th,
+td {
+  text-align: center !important;
+  vertical-align: middle;
+}
+
+.image-icon{
+  width:100px;
+  margin: auto;
+}
+
+#viewSingleCard img{
+  width:150px;
+  height: 150px;
+  border-radius:50%;
+}

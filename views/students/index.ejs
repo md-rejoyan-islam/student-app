@@ -1,0 +1,38 @@
+<section class="my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-10 m-auto">
+      <a href="/students/create" class="btn btn-primary my-2">Add Student</a>
+      <a href="/students/Unverified" class="btn btn-danger my-2"
+        >Unverified Student</a
+      >
+    </div>
+
+
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <h1 class="text-center">Verified Student List</h1>
+      <hr>
+    </div>
+      <% student.forEach((student,index) => { %>
+    <div class="col-md-3">
+      <div class="card mb-3">
+        <div class="card-body text-center" id="viewSingleCard">
+          <% if (student.photo=='avater.webp') { %>
+          <img src="/images/<%= student.photo %> " alt="" />
+          <% } else { %>
+          <img src="/images/students/<%= student.photo %> " alt="" />
+          <% } %>
+          <h2><%= student.name%></h2>
+          <p><%= student.phone%></p>
+        </div>
+        <div class="card-footer text-center">
+          <a href="/students/<%= student.id %>" class="btn btn-primary btn-sm"
+            >view</a
+          >
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</section>

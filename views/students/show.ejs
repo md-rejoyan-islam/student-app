@@ -1,0 +1,42 @@
+<div class="row justify-content-center my-5">
+  <div class="col-md-5">
+    <a href="/students" class="btn btn-primary my-2">back</a>
+    <div class="card">
+      <img src="" class="card-img-top" alt="" />
+      <div class="card-body text-center">
+        <% if ( singleStudent.photo == 'avater.webp') { %>
+        <img
+          src="/images/<%= singleStudent.photo%> "
+          alt=""
+          class="m-auto d-block"
+          style="border-radius: 50%; width: 250px; height: 250px"
+        />
+        <% } else { %>
+        <img
+          src="/images/students/<%= singleStudent.photo%>"
+          alt=""
+          class="m-auto d-block"
+          style="border-radius: 50%; width: 250px; height: 250px"
+        />
+        <% } %>
+
+        <h5 class="card-title"><%= singleStudent.name %></h5>
+        <h5 class="card-title">Email :<%= singleStudent.email %></h5>
+        <h5 class="card-title">Phone : <%= singleStudent.phone %></h5>
+        <h5 class="card-title">Location : <%= singleStudent.location %></h5>
+      </div>
+      <div class="card-footer text-center">
+        <a
+          href="/students/edit/<%= singleStudent.id %>"
+          class="btn btn-sm btn-warning w-25"
+          >edit</a
+        >
+        <a
+          href="/students/delete/<%= singleStudent.id %>"
+          class="btn btn-sm btn-danger deleteBtn w-25"
+          >delete</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
